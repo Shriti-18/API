@@ -1,0 +1,42 @@
+<style media="screen">
+  body{
+    background:#03211F;
+    font-family:code;
+    color:white;
+  }
+  h1{
+    text-align:center;
+  }
+  .random {
+    padding:15px 15px 15px 15px;
+    font-size:20px;
+    background:#1f85de;
+    font-weight:600;
+    color:white;
+    border-radius:3%;
+  }
+  li a{
+    padding:5px 5px 5px 5px;
+    font-size:15px;
+    background:#43615F;
+    color:white;
+    font-family:sans-serif;
+    font-weight:400;
+  }
+</style>
+<h1> Cat breeds Page</h1>
+
+<a  class="random" href="/randomCats"> Random Cats</a>
+<a  class="random" href="/randomDogs"> Random Dogs</a>
+<br>
+<br>
+<ul>
+    <% data.forEach(function(cat){ %>
+       <li>
+         <strong>
+           <a href=<%= cat["wikipedia_url"] %>><%= cat["name"]  %></a>
+         </strong>
+       </li>
+       <br>
+    <% }) %>
+</ul>
